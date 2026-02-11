@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>MGSI 412 – Implémentation SI</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  background: radial-gradient(circle at top, #120000, #000);
+  color: white;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ff4d4d;
+  z-index: 100;
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 3px;
+  color: #ff4d4d;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  border: 2px solid #ff4d4d;
+  padding: 10px 18px;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+header a:hover {
+  background: #ff4d4d;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 30px;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 80px;
+}
+
+.section h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #ff4d4d;
+  font-size: 32px;
+  margin-bottom: 20px;
+  border-left: 6px solid #ff4d4d;
+  padding-left: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,77,77,0.4);
+  border-radius: 20px;
+  padding: 30px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* TABLEAUX */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 14px;
+}
+th {
+  background: rgba(255,77,77,0.25);
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* SCHÉMA */
+.flow {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.flow-box {
+  flex: 1;
+  min-width: 200px;
+  background: rgba(255,77,77,0.15);
+  border: 2px solid #ff4d4d;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.arrow {
+  font-size: 30px;
+  align-self: center;
+}
+.exercise {
+  border-left: 5px solid #ff4d4d;
+  padding-left: 20px;
+}
+.placeholder {
+  opacity: 0.5;
+  font-style: italic;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌋 MGSI 412 – Implémentation SI</h1>
+  <a href="galaxy.html">⬅ Retour Galaxie</a>
+</header>
+
+<div class="container">
+
+<!-- INTRO -->
+<section class="section">
+  <div class="card">
+    <h2>Présentation du module</h2>
+    <p>
+      Ce module porte sur <strong>l’implémentation des systèmes d’information</strong>,
+      depuis la préparation du projet jusqu’au lancement officiel et au support post-démarrage.
+    </p>
+  </div>
+</section>
+
+<!-- COURS DÉTAILLÉ -->
+<section class="section">
+  <h2>Cours détaillé – Implémentation d’un ERP</h2>
+
+  <div class="card">
+    <h3>Les 8 étapes clés</h3>
+
+    <div class="flow">
+      <div class="flow-box">1. Préparation du projet</div>
+      <div class="arrow">➡</div>
+      <div class="flow-box">2. Choix de la solution</div>
+      <div class="arrow">➡</div>
+      <div class="flow-box">3. Planification</div>
+      <div class="arrow">➡</div>
+      <div class="flow-box">4. Préparation des données</div>
+      <div class="arrow">➡</div>
+      <div class="flow-box">5. Configuration ERP</div>
+      <div class="arrow">➡</div>
+      <div class="flow-box">6. Formation</div>
+      <div class="arrow">➡</div>
+      <div class="flow-box">7. Tests & validation</div>
+      <div class="arrow">➡</div>
+      <div class="flow-box">8. Lancement officiel</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Analyse des coûts</h3>
+    <table>
+      <tr>
+        <th>Type de coût</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Coûts directs</td>
+        <td>Licences, implémentation, formation, maintenance</td>
+      </tr>
+      <tr>
+        <td>Coûts indirects</td>
+        <td>Migration des données, réorganisation interne</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- SYNTHÈSE -->
+<section class="section">
+  <h2>Synthèse à retenir</h2>
+  <div class="card">
+    <ul>
+      <li>Un ERP impacte tous les processus</li>
+      <li>La planification est critique</li>
+      <li>Les données doivent être propres avant migration</li>
+      <li>La formation conditionne l’adoption</li>
+      <li>Les tests sécurisent le lancement</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EXERCICES -->
+<section class="section">
+  <h2>Exercices corrigés</h2>
+
+  <div class="card exercise">
+    🔒 <strong>Corrigé – Exercice 1</strong><br><br>
+    👉 <em>COLLER ICI LE CORRIGÉ EXACT MOT POUR MOT (sans modification)</em>
+  </div>
+
+  <div class="card exercise">
+    🔒 <strong>Corrigé – Exercice 2</strong><br><br>
+    👉 <em>COLLER ICI LE CORRIGÉ EXACT MOT POUR MOT</em>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Exercices vierges</h2>
+  <div class="card placeholder">
+    Exercice vierge (non développé) – sera ajouté ultérieurement.
+  </div>
+</section>
+
+</div>
+
+</body>
+</html>
