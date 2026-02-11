@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galactic Revision — Version unifiée</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap');
+
+    :root {
+      --bg: #05060f;
+      --panel: #12172a;
+      --accent: #00f5ff;
+      --accent-2: #ff4d4d;
+      --text: #f4f6ff;
+      --muted: #9aa7c2;
+      --border: rgba(0, 245, 255, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #131b3e, #05060f 45%, #000 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.75);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+    }
+
+    .title {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+      font-size: clamp(20px, 2.2vw, 32px);
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      transition: 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(90deg, rgba(0, 245, 255, 0.25), rgba(122, 0, 255, 0.25));
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.35);
+    }
+
+    .content {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 10px;
+      padding: 14px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .notice {
+      background: rgba(255, 77, 77, 0.12);
+      border: 1px solid rgba(255, 77, 77, 0.5);
+      border-radius: 10px;
+      padding: 10px 12px;
+      color: #ffd7d7;
+    }
+
+    iframe {
+      width: 100%;
+      height: calc(100vh - 215px);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--panel);
+    }
+
+    .footer {
+      padding: 10px 14px 16px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        height: calc(100vh - 255px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="title">🌌 Galactic Revision — 3 pages liées en une seule interface</h1>
+    <p class="subtitle">Navigation unifiée : <strong>Galaxy</strong>, <strong>Revision</strong>, <strong>Architecture</strong> sans suppression des contenus existants.</p>
+    <div class="tabs" role="tablist" aria-label="Navigation des modules">
+      <button class="tab-btn active" data-target="galaxy.html" role="tab" aria-selected="true">🌠 Galaxy</button>
+      <button class="tab-btn" data-target="revision.html" role="tab" aria-selected="false">🌋 Révision MGSI 412</button>
+      <button class="tab-btn" data-target="architecture.html" role="tab" aria-selected="false">🏗️ Architecture</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="notice">ℹ️ Les trois fichiers originaux sont conservés intacts. Cette page les relie dans une vue unique.</div>
+    <iframe id="viewer" src="galaxy.html" title="Module visualisé"></iframe>
+  </main>
+
+  <div class="footer">Version unifiée — utilise les trois pages d’origine sans retirer de contenu.</div>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const viewer = document.getElementById('viewer');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        viewer.src = btn.dataset.target;
+      });
+    });
+  </script>
+</body>
+</html>
